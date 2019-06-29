@@ -1,0 +1,6 @@
+<% if current_user.nil? %>
+    <%= link_to 'Bejelentkezés', user_authsch_omniauth_authorize_path  %>
+    <%= link_to 'Regisztráció', new_user_registration_path %>
+<% else %>
+    <%= link_to 'Kijelentkezés', destroy_user_session_path, method: :delete %>
+<% end %>
